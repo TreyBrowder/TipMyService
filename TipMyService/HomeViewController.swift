@@ -57,11 +57,11 @@ class HomeViewController: UIViewController {
         }
         
         resultView.snp.makeConstraints { maker in
-            maker.height.equalTo(224)
+            maker.height.equalTo(240)
         }
         
         billView.snp.makeConstraints { maker in
-            maker.height.equalTo(56)
+            maker.height.equalTo(48)
         }
         
         tipInputView.snp.makeConstraints { maker in

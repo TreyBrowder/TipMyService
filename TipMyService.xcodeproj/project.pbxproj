@@ -30,6 +30,7 @@
 		EB5E68902BEC092300CA57DE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E688F2BEC092300CA57DE /* UIColor+Extension.swift */; };
 		EB5E68932BEC136A00CA57DE /* LabelCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68922BEC136A00CA57DE /* LabelCreater.swift */; };
 		EB5E68952BEC25E200CA57DE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68942BEC25E200CA57DE /* UIView+Extension.swift */; };
+		EB5E68972BEC340C00CA57DE /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68962BEC340C00CA57DE /* AmountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		EB5E688F2BEC092300CA57DE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		EB5E68922BEC136A00CA57DE /* LabelCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCreater.swift; sourceTree = "<group>"; };
 		EB5E68942BEC25E200CA57DE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		EB5E68962BEC340C00CA57DE /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				EB5E68832BEC077700CA57DE /* BillView.swift */,
 				EB5E68852BEC07DF00CA57DE /* TipInputView.swift */,
 				EB5E68872BEC080900CA57DE /* SplitView.swift */,
+				EB5E68962BEC340C00CA57DE /* AmountView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5E68972BEC340C00CA57DE /* AmountView.swift in Sources */,
 				EB5E68822BEC073C00CA57DE /* ResultView.swift in Sources */,
 				EB5E68952BEC25E200CA57DE /* UIView+Extension.swift in Sources */,
 				EB5E68882BEC080900CA57DE /* SplitView.swift in Sources */,

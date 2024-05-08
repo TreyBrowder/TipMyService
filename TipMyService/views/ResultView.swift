@@ -39,9 +39,9 @@ class ResultView: UIView {
     
     private lazy var hStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
-            AmountView(),
+            AmountView(title: "Bill Total:", textAlignment: .left),
             UIView(),
-            AmountView()
+            AmountView(title: "Tip Total:", textAlignment: .right)
         ])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -95,20 +95,5 @@ class ResultView: UIView {
         view.heightAnchor.constraint(equalToConstant: height).isActive = true
         
         return view
-    }
-}
-
-class AmountView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func layout(){
-        backgroundColor = .red
     }
 }
