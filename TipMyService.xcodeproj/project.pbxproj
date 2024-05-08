@@ -20,6 +20,15 @@
 		EB5E68782BEC04DE00CA57DE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E68772BEC04DE00CA57DE /* SnapshotTesting */; };
 		EB5E687B2BEC050B00CA57DE /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E687A2BEC050B00CA57DE /* CombineCocoa */; };
 		EB5E687D2BEC053A00CA57DE /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E687C2BEC053A00CA57DE /* CombineCocoa */; };
+		EB5E68802BEC068D00CA57DE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E687F2BEC068D00CA57DE /* HeaderView.swift */; };
+		EB5E68822BEC073C00CA57DE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68812BEC073C00CA57DE /* ResultView.swift */; };
+		EB5E68842BEC077700CA57DE /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68832BEC077700CA57DE /* BillView.swift */; };
+		EB5E68862BEC07DF00CA57DE /* TipInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68852BEC07DF00CA57DE /* TipInputView.swift */; };
+		EB5E68882BEC080900CA57DE /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68872BEC080900CA57DE /* SplitView.swift */; };
+		EB5E688B2BEC08C400CA57DE /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E688A2BEC08C400CA57DE /* ThemeColor.swift */; };
+		EB5E688D2BEC08CF00CA57DE /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E688C2BEC08CF00CA57DE /* ThemeFont.swift */; };
+		EB5E68902BEC092300CA57DE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E688F2BEC092300CA57DE /* UIColor+Extension.swift */; };
+		EB5E68932BEC136A00CA57DE /* LabelCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68922BEC136A00CA57DE /* LabelCreater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,15 @@
 		EB5E685D2BEBFFE100CA57DE /* TipMyServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipMyServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E68612BEBFFE100CA57DE /* TipMyServiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMyServiceUITests.swift; sourceTree = "<group>"; };
 		EB5E68632BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMyServiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB5E687F2BEC068D00CA57DE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EB5E68812BEC073C00CA57DE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		EB5E68832BEC077700CA57DE /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
+		EB5E68852BEC07DF00CA57DE /* TipInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipInputView.swift; sourceTree = "<group>"; };
+		EB5E68872BEC080900CA57DE /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
+		EB5E688A2BEC08C400CA57DE /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		EB5E688C2BEC08CF00CA57DE /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		EB5E688F2BEC092300CA57DE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		EB5E68922BEC136A00CA57DE /* LabelCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCreater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +126,10 @@
 		EB5E683F2BEBFFE000CA57DE /* TipMyService */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E68912BEC134F00CA57DE /* Factory */,
+				EB5E688E2BEC090A00CA57DE /* extension */,
+				EB5E68892BEC08B700CA57DE /* Config */,
+				EB5E687E2BEC064700CA57DE /* views */,
 				EB5E68402BEBFFE000CA57DE /* AppDelegate.swift */,
 				EB5E68422BEBFFE000CA57DE /* SceneDelegate.swift */,
 				EB5E68442BEBFFE000CA57DE /* HomeViewController.swift */,
@@ -140,6 +162,43 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB5E687E2BEC064700CA57DE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E687F2BEC068D00CA57DE /* HeaderView.swift */,
+				EB5E68812BEC073C00CA57DE /* ResultView.swift */,
+				EB5E68832BEC077700CA57DE /* BillView.swift */,
+				EB5E68852BEC07DF00CA57DE /* TipInputView.swift */,
+				EB5E68872BEC080900CA57DE /* SplitView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		EB5E68892BEC08B700CA57DE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E688A2BEC08C400CA57DE /* ThemeColor.swift */,
+				EB5E688C2BEC08CF00CA57DE /* ThemeFont.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		EB5E688E2BEC090A00CA57DE /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E688F2BEC092300CA57DE /* UIColor+Extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		EB5E68912BEC134F00CA57DE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E68922BEC136A00CA57DE /* LabelCreater.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +347,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5E68822BEC073C00CA57DE /* ResultView.swift in Sources */,
+				EB5E68882BEC080900CA57DE /* SplitView.swift in Sources */,
+				EB5E688B2BEC08C400CA57DE /* ThemeColor.swift in Sources */,
+				EB5E68902BEC092300CA57DE /* UIColor+Extension.swift in Sources */,
 				EB5E68452BEBFFE000CA57DE /* HomeViewController.swift in Sources */,
+				EB5E68802BEC068D00CA57DE /* HeaderView.swift in Sources */,
 				EB5E68412BEBFFE000CA57DE /* AppDelegate.swift in Sources */,
+				EB5E688D2BEC08CF00CA57DE /* ThemeFont.swift in Sources */,
 				EB5E68432BEBFFE000CA57DE /* SceneDelegate.swift in Sources */,
+				EB5E68932BEC136A00CA57DE /* LabelCreater.swift in Sources */,
+				EB5E68842BEC077700CA57DE /* BillView.swift in Sources */,
+				EB5E68862BEC07DF00CA57DE /* TipInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
