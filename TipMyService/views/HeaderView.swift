@@ -27,17 +27,29 @@ class HeaderView: UIView {
     }()
     
     private let bottomLabel: UILabel = {
-        let label = UILabel()
+        LabelCreater.build(
+            text: "Calculator",
+            font: ThemeFont.demiBold(ofSize: 20),
+            textAlignment: .left)
+    }()
+    
+    private lazy var vStack: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [
+            topLabel,
+            bottomLabel
+        ])
         
-        
-        return label
+        view.axis = .vertical
+        view.spacing = -4
+        view.alignment = .center
+        return view
     }()
     
     private lazy var hStack: UIStackView = {
         let view = UIStackView(arrangedSubviews: [
-        
+            imageView,
+            vStack
         ])
-        
         view.axis = .horizontal
         view.spacing = 8
         view.alignment = .center
@@ -54,7 +66,15 @@ class HeaderView: UIView {
     }
     
     private func layout() {
-        backgroundColor = .green
+        
+        addSubview(hStack)
+        hStack.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.height.equalTo(imageView.snp.width)
+        }
     }
-
 }
