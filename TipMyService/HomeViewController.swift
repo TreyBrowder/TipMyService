@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class HomeViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class HomeViewController: UIViewController {
     private let billView = BillView()
     private let tipInputView = TipInputView()
     private let splitView = SplitView()
+    
+    private let vm = TipCalcVM()
+    private var cancelables = Set<AnyCancellable>()
     
     private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
@@ -41,9 +45,22 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         layout()
+        bind()
+    }
+    
+    private func bind(){
         
+        let input = TipCalcVM.Input(
+            billPublisher: Just(10).eraseToAnyPublisher(),
+            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+            splitPublisher: Just(5).eraseToAnyPublisher())
+        
+        let output = vm.transform(input: input)
+        
+        output.updateViewPushier.sink { result in
+            print("RESULT: \(result)")
+        }.store(in: &cancelables)
     }
 
     private func layout() {
