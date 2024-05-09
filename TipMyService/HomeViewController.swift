@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
         let input = TipCalcVM.Input(
             billPublisher: billView.billValuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: Just(5).eraseToAnyPublisher())
+            splitPublisher: splitView.valuePublisher)
         
         let output = vm.transform(input: input)
         

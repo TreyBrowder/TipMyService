@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class SplitView: UIView {
     
@@ -20,6 +22,11 @@ class SplitView: UIView {
             text: "-",
             corners: [.layerMinXMinYCorner, .layerMinXMaxYCorner])
         
+        btn.tapPublisher.flatMap { [unowned self] _ in
+            Just(splitSubject.value == 1 ? 1 : splitSubject.value - 1 )
+        }.assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
+        
         return btn
     }()
     
@@ -27,6 +34,11 @@ class SplitView: UIView {
         let btn = buildBtn(
             text: "+",
             corners: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+        
+        btn.tapPublisher.flatMap { [unowned self] _ in
+            Just(splitSubject.value + 1 )
+        }.assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
         return btn
     }()
     
@@ -35,7 +47,7 @@ class SplitView: UIView {
             text: "1",
             font: ThemeFont.bold(ofSize: 20),
             backgroundColor: .white)
-        
+
         return label
     }()
     
@@ -49,10 +61,18 @@ class SplitView: UIView {
         stackView.spacing = 0
         return stackView
     }()
+    
+    private let splitSubject: CurrentValueSubject<Int, Never> = .init(1)
+    var valuePublisher: AnyPublisher<Int, Never> {
+        return splitSubject.removeDuplicates().eraseToAnyPublisher()
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
 
     init(){
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -78,6 +98,12 @@ class SplitView: UIView {
             make.trailing.equalTo(hStackView.snp.leading).offset(-24)
             make.width.equalTo(68)
         }
+    }
+    
+    private func observe(){
+        splitSubject.sink { [unowned self] num in
+            quantityLabel.text = num.stringValue
+        }.store(in: &cancellables)
     }
     
     private func buildBtn(text: String, corners: CACornerMask) -> UIButton {
