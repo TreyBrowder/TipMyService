@@ -31,6 +31,8 @@
 		EB5E68932BEC136A00CA57DE /* LabelCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68922BEC136A00CA57DE /* LabelCreater.swift */; };
 		EB5E68952BEC25E200CA57DE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68942BEC25E200CA57DE /* UIView+Extension.swift */; };
 		EB5E68972BEC340C00CA57DE /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68962BEC340C00CA57DE /* AmountView.swift */; };
+		EB5E68992BED166F00CA57DE /* LabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68982BED166F00CA57DE /* LabelHeaderView.swift */; };
+		EB5E689C2BED314900CA57DE /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E689B2BED314900CA57DE /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		EB5E68922BEC136A00CA57DE /* LabelCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCreater.swift; sourceTree = "<group>"; };
 		EB5E68942BEC25E200CA57DE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		EB5E68962BEC340C00CA57DE /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		EB5E68982BED166F00CA57DE /* LabelHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelHeaderView.swift; sourceTree = "<group>"; };
+		EB5E689B2BED314900CA57DE /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 		EB5E683F2BEBFFE000CA57DE /* TipMyService */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E689A2BED313A00CA57DE /* models */,
 				EB5E68912BEC134F00CA57DE /* Factory */,
 				EB5E688E2BEC090A00CA57DE /* extension */,
 				EB5E68892BEC08B700CA57DE /* Config */,
@@ -177,6 +182,7 @@
 				EB5E68852BEC07DF00CA57DE /* TipInputView.swift */,
 				EB5E68872BEC080900CA57DE /* SplitView.swift */,
 				EB5E68962BEC340C00CA57DE /* AmountView.swift */,
+				EB5E68982BED166F00CA57DE /* LabelHeaderView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -205,6 +211,14 @@
 				EB5E68922BEC136A00CA57DE /* LabelCreater.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		EB5E689A2BED313A00CA57DE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E689B2BED314900CA57DE /* Tip.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5E68972BEC340C00CA57DE /* AmountView.swift in Sources */,
+				EB5E689C2BED314900CA57DE /* Tip.swift in Sources */,
+				EB5E68992BED166F00CA57DE /* LabelHeaderView.swift in Sources */,
 				EB5E68822BEC073C00CA57DE /* ResultView.swift in Sources */,
 				EB5E68952BEC25E200CA57DE /* UIView+Extension.swift in Sources */,
 				EB5E68882BEC080900CA57DE /* SplitView.swift in Sources */,
