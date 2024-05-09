@@ -58,8 +58,8 @@ class HomeViewController: UIViewController {
         
         let output = vm.transform(input: input)
         
-        output.updateViewPushier.sink { result in
-            print("RESULT: \(result)")
+        output.updateViewPushier.sink { [unowned self] result in
+            resultView.configure(res: result)
         }.store(in: &cancelables)
     }
 
