@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillView: UIView {
 
@@ -30,7 +32,7 @@ class BillView: UIView {
         return label
     }()
     
-    private lazy var textFieldView: UITextField = {
+    private lazy var billAmountTxtField: UITextField = {
        let field = UITextField()
         field.borderStyle = .none
         field.font = ThemeFont.bold(ofSize: 24)
@@ -62,13 +64,29 @@ class BillView: UIView {
         return field
     }()
     
+    
+    private let billSubject: PassthroughSubject<Double, Never> = .init()
+    var billValuePublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
+    
+    private var cancelables = Set<AnyCancellable>()
+    
     init(){
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func observe() {
+        billAmountTxtField.textPublisher.sink { [unowned self] text in
+            
+            billSubject.send(text?.doubleValue ?? 0)
+        }.store(in: &cancelables)
     }
     
     private func layout(){
@@ -87,14 +105,14 @@ class BillView: UIView {
         }
         
         textFieldContainerView.addSubview(currencyLabel)
-        textFieldContainerView.addSubview(textFieldView)
+        textFieldContainerView.addSubview(billAmountTxtField)
         
         currencyLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.equalTo(textFieldContainerView.snp.leading).offset(16)
         }
         
-        textFieldView.snp.makeConstraints { make in
+        billAmountTxtField.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.equalTo(currencyLabel.snp.trailing).offset(16)
             make.trailing.equalTo(textFieldContainerView.snp.trailing).offset(-16)
@@ -103,7 +121,7 @@ class BillView: UIView {
     }
     
     @objc private func didTapDoneBtn(){
-        textFieldView.endEditing(true)
+        billAmountTxtField.endEditing(true)
     }
     
 }

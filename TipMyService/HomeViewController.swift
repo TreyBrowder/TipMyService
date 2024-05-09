@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
     private func bind(){
         
         let input = TipCalcVM.Input(
-            billPublisher: Just(10).eraseToAnyPublisher(),
+            billPublisher: billView.billValuePublisher,
             tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
             splitPublisher: Just(5).eraseToAnyPublisher())
         
