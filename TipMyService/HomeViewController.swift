@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import CombineCocoa
 
 class HomeViewController: UIViewController {
     
@@ -16,9 +17,6 @@ class HomeViewController: UIViewController {
     private let billView = BillView()
     private let tipInputView = TipInputView()
     private let splitView = SplitView()
-    
-    private let vm = TipCalcVM()
-    private var cancelables = Set<AnyCancellable>()
     
     private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
@@ -43,10 +41,28 @@ class HomeViewController: UIViewController {
     return labelVar
     }()
     
+    private let vm = TipCalcVM()
+    private var cancelables = Set<AnyCancellable>()
+    
+    private lazy var viewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        view.addGestureRecognizer(tapGesture)
+         return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
         bind()
+        observe()
+    }
+    
+    private func observe() {
+        viewTapPublisher.sink { [unowned self] () in
+            view.endEditing(true)
+        }.store(in: &cancelables)
     }
     
     private func bind(){
