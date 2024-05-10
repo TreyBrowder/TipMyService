@@ -39,6 +39,8 @@
 		EB5E68A52BED63BC00CA57DE /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68A42BED63BC00CA57DE /* UIResponder+Extension.swift */; };
 		EB5E68A72BED6F8300CA57DE /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68A62BED6F8300CA57DE /* Int+Extension.swift */; };
 		EB5E68A92BED7E3E00CA57DE /* Double+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68A82BED7E3E00CA57DE /* Double+Extention.swift */; };
+		EB5E68AE2BEE667A00CA57DE /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68AD2BEE667A00CA57DE /* AudioPlayerService.swift */; };
+		EB5E68AF2BEE6B0000CA57DE /* TipCalcReset.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EB5E68AB2BEE664400CA57DE /* TipCalcReset.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		EB5E68A42BED63BC00CA57DE /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 		EB5E68A62BED6F8300CA57DE /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		EB5E68A82BED7E3E00CA57DE /* Double+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extention.swift"; sourceTree = "<group>"; };
+		EB5E68AB2BEE664400CA57DE /* TipCalcReset.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TipCalcReset.m4a; sourceTree = "<group>"; };
+		EB5E68AD2BEE667A00CA57DE /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 		EB5E683F2BEBFFE000CA57DE /* TipMyService */ = {
 			isa = PBXGroup;
 			children = (
+				EB5E68AC2BEE666500CA57DE /* Service */,
+				EB5E68AA2BEE662300CA57DE /* Resource */,
 				EB5E689D2BED41BC00CA57DE /* ViewModel */,
 				EB5E689A2BED313A00CA57DE /* models */,
 				EB5E68912BEC134F00CA57DE /* Factory */,
@@ -245,6 +251,22 @@
 				EB5E689E2BED41DE00CA57DE /* TipCalcVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB5E68AA2BEE662300CA57DE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E68AB2BEE664400CA57DE /* TipCalcReset.m4a */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		EB5E68AC2BEE666500CA57DE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EB5E68AD2BEE667A00CA57DE /* AudioPlayerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5E68AF2BEE6B0000CA57DE /* TipCalcReset.m4a in Resources */,
 				EB5E684D2BEBFFE100CA57DE /* LaunchScreen.storyboard in Resources */,
 				EB5E684A2BEBFFE100CA57DE /* Assets.xcassets in Resources */,
 			);
@@ -405,6 +428,7 @@
 				EB5E68952BEC25E200CA57DE /* UIView+Extension.swift in Sources */,
 				EB5E68882BEC080900CA57DE /* SplitView.swift in Sources */,
 				EB5E688B2BEC08C400CA57DE /* ThemeColor.swift in Sources */,
+				EB5E68AE2BEE667A00CA57DE /* AudioPlayerService.swift in Sources */,
 				EB5E68902BEC092300CA57DE /* UIColor+Extension.swift in Sources */,
 				EB5E68452BEBFFE000CA57DE /* HomeViewController.swift in Sources */,
 				EB5E68802BEC068D00CA57DE /* HeaderView.swift in Sources */,

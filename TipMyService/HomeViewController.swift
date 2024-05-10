@@ -52,6 +52,15 @@ class HomeViewController: UIViewController {
         }.eraseToAnyPublisher()
     }()
     
+    private lazy var headerViewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        tapGesture.numberOfTapsRequired = 2
+        headerView.addGestureRecognizer(tapGesture)
+         return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
@@ -63,6 +72,10 @@ class HomeViewController: UIViewController {
         viewTapPublisher.sink { [unowned self] () in
             view.endEditing(true)
         }.store(in: &cancelables)
+        
+        headerViewTapPublisher.sink { () in
+            print("HeaderView TipCalc FIRE")
+        }.store(in: &cancelables)
     }
     
     private func bind(){
@@ -70,12 +83,35 @@ class HomeViewController: UIViewController {
         let input = TipCalcVM.Input(
             billPublisher: billView.billValuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitView.valuePublisher)
+            splitPublisher: splitView.valuePublisher,
+            headerViewTapPublisher: headerViewTapPublisher)
+    
         
         let output = vm.transform(input: input)
         
         output.updateViewPushier.sink { [unowned self] result in
             resultView.configure(res: result)
+        }.store(in: &cancelables)
+        
+        output.resetTipCalcPublisher.sink { [unowned self] _ in
+            billView.reset()
+            tipInputView.reset()
+            splitView.reset()
+            
+            //add animation to the reset
+            UIView.animate(
+                withDuration: 0.1,
+                delay: 0,
+                usingSpringWithDamping: 5.0,
+                initialSpringVelocity: 0.5,
+                options: .curveEaseInOut) {
+                    self.headerView.transform = .init(scaleX: 1.5, y: 1.5)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.1) {
+                        self.headerView.transform = .identity
+                    }
+                }
+
         }.store(in: &cancelables)
     }
 

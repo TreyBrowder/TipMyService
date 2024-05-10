@@ -14,13 +14,21 @@ class TipCalcVM {
         let billPublisher: AnyPublisher<Double, Never>
         let tipPublisher: AnyPublisher<Tip, Never>
         let splitPublisher: AnyPublisher<Int, Never>
+        let headerViewTapPublisher: AnyPublisher<Void, Never>
     }
     
     struct Output {
         let updateViewPushier: AnyPublisher<Result, Never>
+        let resetTipCalcPublisher: AnyPublisher<Void, Never>
     }
     
     private var cancellables = Set<AnyCancellable>()
+    
+    private let audioPlayerService: AudioPlayerService
+    
+    init(audioPlayerService: AudioPlayerService = AudioPlayerClass()) {
+        self.audioPlayerService = audioPlayerService
+    }
     
     func transform(input: Input) -> Output {
         
@@ -38,7 +46,18 @@ class TipCalcVM {
                 
                 return Just(result)
             }.eraseToAnyPublisher()
-        return Output(updateViewPushier: updateViewPublisher)
+        
+        let resetTipcalcPublisher = input
+            .headerViewTapPublisher
+            .handleEvents(receiveOutput: { [unowned self] in
+            audioPlayerService.playSound()
+        }).flatMap {
+            return Just($0)
+        }.eraseToAnyPublisher()
+        
+        return Output(
+            updateViewPushier: updateViewPublisher,
+            resetTipCalcPublisher: resetTipcalcPublisher)
     }
     
     private func getTipAmount(bill: Double, tip: Tip) -> Double{
