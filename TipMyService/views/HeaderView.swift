@@ -10,7 +10,7 @@ import UIKit
 class HeaderView: UIView {
     
     private let imageView: UIImageView = {
-        let view = UIImageView(image: .init(named: ""))
+        let view = UIImageView(image: .init(named: "TipCalcUIPic"))
         view.contentMode = .scaleAspectFit
         return view
     }()

@@ -96,7 +96,7 @@ class TipCalcScreen {
         ]
     }
     
-    var customButton: XCUIElement {
+    var customBtn: XCUIElement {
         return app.buttons[
             ScreenIdentifier
                 .TipInputView
@@ -145,14 +145,14 @@ class TipCalcScreen {
     }
     
     
-// MARK: Actions
+// MARK: Action functions
     
     func enterBill(amount: Double){
         billInputTxtField.tap()
         billInputTxtField.typeText("\(amount)\n")
     }
     
-    func selctTip(tip: Tip){
+    func selectTip(tip: Tip){
         switch tip {
         case .tenPercent:
             tenButton.tap()
@@ -161,7 +161,7 @@ class TipCalcScreen {
         case .twentyPercent:
             twentyButton.tap()
         case .custom(let value):
-            customButton.tap()
+            customBtn.tap()
             XCTAssertTrue(customAlertTxtField.waitForExistence(timeout: 2.0))
             customAlertTxtField.typeText("\(value)\n")
         }
