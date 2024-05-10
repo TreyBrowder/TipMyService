@@ -14,7 +14,6 @@
 		EB5E684D2BEBFFE100CA57DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB5E684B2BEBFFE100CA57DE /* LaunchScreen.storyboard */; };
 		EB5E68582BEBFFE100CA57DE /* TipMyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68572BEBFFE100CA57DE /* TipMyServiceTests.swift */; };
 		EB5E68622BEBFFE100CA57DE /* TipMyServiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68612BEBFFE100CA57DE /* TipMyServiceUITests.swift */; };
-		EB5E68642BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68632BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift */; };
 		EB5E68722BEC02C300CA57DE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E68712BEC02C300CA57DE /* SnapKit */; };
 		EB5E68752BEC02D700CA57DE /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E68742BEC02D700CA57DE /* CombineCocoa */; };
 		EB5E68782BEC04DE00CA57DE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = EB5E68772BEC04DE00CA57DE /* SnapshotTesting */; };
@@ -41,6 +40,9 @@
 		EB5E68A92BED7E3E00CA57DE /* Double+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68A82BED7E3E00CA57DE /* Double+Extention.swift */; };
 		EB5E68AE2BEE667A00CA57DE /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68AD2BEE667A00CA57DE /* AudioPlayerService.swift */; };
 		EB5E68AF2BEE6B0000CA57DE /* TipCalcReset.m4a in Resources */ = {isa = PBXBuildFile; fileRef = EB5E68AB2BEE664400CA57DE /* TipCalcReset.m4a */; };
+		EB5E68B12BEE79A500CA57DE /* ScreenIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68B02BEE79A500CA57DE /* ScreenIdentifier.swift */; };
+		EB5E68B22BEE79A500CA57DE /* ScreenIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68B02BEE79A500CA57DE /* ScreenIdentifier.swift */; };
+		EB5E68B42BEE7C1400CA57DE /* TipCalcScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5E68B32BEE7C1400CA57DE /* TipCalcScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +74,6 @@
 		EB5E68572BEBFFE100CA57DE /* TipMyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMyServiceTests.swift; sourceTree = "<group>"; };
 		EB5E685D2BEBFFE100CA57DE /* TipMyServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipMyServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB5E68612BEBFFE100CA57DE /* TipMyServiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMyServiceUITests.swift; sourceTree = "<group>"; };
-		EB5E68632BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMyServiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB5E687F2BEC068D00CA57DE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EB5E68812BEC073C00CA57DE /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		EB5E68832BEC077700CA57DE /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
@@ -94,6 +95,8 @@
 		EB5E68A82BED7E3E00CA57DE /* Double+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extention.swift"; sourceTree = "<group>"; };
 		EB5E68AB2BEE664400CA57DE /* TipCalcReset.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = TipCalcReset.m4a; sourceTree = "<group>"; };
 		EB5E68AD2BEE667A00CA57DE /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		EB5E68B02BEE79A500CA57DE /* ScreenIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenIdentifier.swift; sourceTree = "<group>"; };
+		EB5E68B32BEE7C1400CA57DE /* TipCalcScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalcScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5E68612BEBFFE100CA57DE /* TipMyServiceUITests.swift */,
-				EB5E68632BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift */,
+				EB5E68B32BEE7C1400CA57DE /* TipCalcScreen.swift */,
 			);
 			path = TipMyServiceUITests;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			children = (
 				EB5E689B2BED314900CA57DE /* Tip.swift */,
 				EB5E68A02BED42ED00CA57DE /* Result.swift */,
+				EB5E68B02BEE79A500CA57DE /* ScreenIdentifier.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -420,6 +424,7 @@
 				EB5E68972BEC340C00CA57DE /* AmountView.swift in Sources */,
 				EB5E68A52BED63BC00CA57DE /* UIResponder+Extension.swift in Sources */,
 				EB5E68A72BED6F8300CA57DE /* Int+Extension.swift in Sources */,
+				EB5E68B12BEE79A500CA57DE /* ScreenIdentifier.swift in Sources */,
 				EB5E689C2BED314900CA57DE /* Tip.swift in Sources */,
 				EB5E68A92BED7E3E00CA57DE /* Double+Extention.swift in Sources */,
 				EB5E68A32BED56F600CA57DE /* String+Extension.swift in Sources */,
@@ -454,8 +459,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB5E68642BEBFFE100CA57DE /* TipMyServiceUITestsLaunchTests.swift in Sources */,
+				EB5E68B22BEE79A500CA57DE /* ScreenIdentifier.swift in Sources */,
 				EB5E68622BEBFFE100CA57DE /* TipMyServiceUITests.swift in Sources */,
+				EB5E68B42BEE7C1400CA57DE /* TipCalcScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
