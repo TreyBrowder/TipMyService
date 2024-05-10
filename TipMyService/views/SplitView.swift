@@ -27,6 +27,11 @@ class SplitView: UIView {
         }.assign(to: \.value, on: splitSubject)
             .store(in: &cancellables)
         
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .SplitView
+            .decrementBtn
+            .rawValue
+        
         return btn
     }()
     
@@ -39,6 +44,12 @@ class SplitView: UIView {
             Just(splitSubject.value + 1 )
         }.assign(to: \.value, on: splitSubject)
             .store(in: &cancellables)
+        
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .SplitView
+            .increaseBtn
+            .rawValue
+        
         return btn
     }()
     
@@ -47,6 +58,11 @@ class SplitView: UIView {
             text: "1",
             font: ThemeFont.bold(ofSize: 20),
             backgroundColor: .white)
+        
+        label.accessibilityIdentifier = ScreenIdentifier
+            .SplitView
+            .quantityLabel
+            .rawValue
 
         return label
     }()

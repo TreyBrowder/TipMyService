@@ -58,6 +58,10 @@ class HeaderView: UIView {
     
     init(){
         super.init(frame: .zero)
+        accessibilityIdentifier = ScreenIdentifier
+            .HeaderView
+            .headerView
+            .rawValue
         layout()
     }
     

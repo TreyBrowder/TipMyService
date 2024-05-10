@@ -21,6 +21,10 @@ class BillView: UIView {
         let view = UIView()
         view.backgroundColor = .white
         view.addCornerRadius(radius: 8.0)
+        view.accessibilityIdentifier = ScreenIdentifier
+            .BillView
+            .textField
+            .rawValue
         return view
     }()
     

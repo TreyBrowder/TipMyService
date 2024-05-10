@@ -23,6 +23,12 @@ class TipInputView: UIView {
             Just(Tip.tenPercent)
         }).assign(to: \.value , on: tipSubject)
             .store(in: &cancellables)
+        
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .TipInputView
+            .tenBtn
+            .rawValue
+        
         return btn
     }()
     
@@ -32,6 +38,12 @@ class TipInputView: UIView {
             Just(Tip.fifteenPercent)
         }).assign(to: \.value , on: tipSubject)
             .store(in: &cancellables)
+        
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .TipInputView
+            .fifteenBtn
+            .rawValue
+        
         return btn
     }()
     
@@ -41,6 +53,12 @@ class TipInputView: UIView {
             Just(Tip.twentyPercent)
         }).assign(to: \.value , on: tipSubject)
             .store(in: &cancellables)
+        
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .TipInputView
+            .twentyBtn
+            .rawValue
+        
         return btn
     }()
     
@@ -53,6 +71,11 @@ class TipInputView: UIView {
         btn.tapPublisher.sink { [weak self] _ in
             self?.handleCustomTipBtn()
         }.store(in: &cancellables)
+        
+        btn.accessibilityIdentifier = ScreenIdentifier
+            .TipInputView
+            .customBtn
+            .rawValue
         
         return btn
     }()
